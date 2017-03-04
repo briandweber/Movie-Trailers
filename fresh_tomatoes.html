@@ -6,64 +6,10 @@
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="style.css">
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <style type="text/css" media="screen">
-        body {
-            padding-top: 80px;
-        }
-        #trailer .modal-dialog {
-            margin-top: 200px;
-            width: 640px;
-            height: 480px;
-        }
-        .hanging-close {
-            position: absolute;
-            top: -12px;
-            right: -12px;
-            z-index: 9001;
-        }
-        #trailer-video {
-            width: 100%;
-            height: 100%;
-        }
-        .movie-tile {
-            margin-bottom: 20px;
-            padding-top: 20px;
-        }
-        .movie-tile:hover {
-            background-color: #EEE;
-            cursor: pointer;
-        }
-        .scale-media {
-            padding-bottom: 56.25%;
-            position: relative;
-        }
-        .scale-media iframe {
-            border: none;
-            height: 100%;
-            position: absolute;
-            width: 100%;
-            left: 0;
-            top: 0;
-            background-color: white;
-        }
-        #banner {
-            background-size: 100%;
-            background: -webkit-linear-gradient(blue, #2fd0ed);
-            background: -o-linear-gradient(blue, #2fd0ed);
-            background: linear-gradient(blue, #2fd0ed);
-            text-align: center;
-            color: white;
-            height: 150px;
-            font-size: 30;
-            padding: 20px;
-        }
-        #left{
-            float: left;
-        }
-       
-    </style>
+    <script src="fresh_tomatoes.js" type="text/javascript">
     <script type="text/javascript" charset="utf-8">
         // Pause the video when the modal is closed
         $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
@@ -96,14 +42,9 @@
   <body>
     <div id="banner">
         <p>Brian's Movie Trailer Website</p>
-        <p>Click on any image to view a YouTube railer</p>
+        <p>Top 20 U.S. Movies of All Time from The American Film Institute</p>
+        <p>Click on any image to view a YouTube trailer</p>
     </div>
-    <img id="left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpO7EzSjODk8n7EGlkAlSF-S336HLKGOFs86b7Srb5vsoN8S4be4R7kZOK">
-    <img id="left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpO7EzSjODk8n7EGlkAlSF-S336HLKGOFs86b7Srb5vsoN8S4be4R7kZOK">
-    <img id="left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpO7EzSjODk8n7EGlkAlSF-S336HLKGOFs86b7Srb5vsoN8S4be4R7kZOK">
-    <img id="left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpO7EzSjODk8n7EGlkAlSF-S336HLKGOFs86b7Srb5vsoN8S4be4R7kZOK">
-    <img id="left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpO7EzSjODk8n7EGlkAlSF-S336HLKGOFs86b7Srb5vsoN8S4be4R7kZOK">
-    <img id="left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpO7EzSjODk8n7EGlkAlSF-S336HLKGOFs86b7Srb5vsoN8S4be4R7kZOK">
     <!-- Trailer Video Modal -->
     <div class="modal" id="trailer">
       <div class="modal-dialog">
@@ -116,7 +57,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Main Page Content -->
     <div class="container">
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -128,7 +69,7 @@
       </div>
     </div>
     <div class="container">
-      
+
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="zyv19bg0scg" data-toggle="modal" data-target="#trailer">
     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/ce/Citizenkane.jpg/220px-Citizenkane.jpg" width="220" height="342">
     <h2>Citizen Kane</h2>

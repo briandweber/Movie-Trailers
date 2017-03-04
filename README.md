@@ -16,7 +16,7 @@ trailer that launches upon clicking on an image.
 
 ##Instructions:
 Open the file titled fresh_tomatoes.html in your web browser.  Images will
-load.  Click on any image to view the youtube trailer.
+load.  Click on any image to view the youtube trailer.  To exit, click the 'x' at the tope right of the video window or anywhere outside the video.
 
 ##Language:
 Python
