@@ -1,0 +1,234 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>Fresh Tomatoes!</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+        #banner {
+            background-size: 100%;
+            background: -webkit-linear-gradient(blue, #2fd0ed);
+            background: -o-linear-gradient(blue, #2fd0ed);
+            background: linear-gradient(blue, #2fd0ed);
+            text-align: center;
+            color: white;
+            height: 150px;
+            font-size: 30;
+            padding: 20px;
+        }
+        #left{
+            float: left;
+        }
+       
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="banner">
+        <p>Brian's Movie Trailer Website</p>
+        <p>Click on any image to view a YouTube railer</p>
+    </div>
+    <img id="left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpO7EzSjODk8n7EGlkAlSF-S336HLKGOFs86b7Srb5vsoN8S4be4R7kZOK">
+    <img id="left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpO7EzSjODk8n7EGlkAlSF-S336HLKGOFs86b7Srb5vsoN8S4be4R7kZOK">
+    <img id="left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpO7EzSjODk8n7EGlkAlSF-S336HLKGOFs86b7Srb5vsoN8S4be4R7kZOK">
+    <img id="left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpO7EzSjODk8n7EGlkAlSF-S336HLKGOFs86b7Srb5vsoN8S4be4R7kZOK">
+    <img id="left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpO7EzSjODk8n7EGlkAlSF-S336HLKGOFs86b7Srb5vsoN8S4be4R7kZOK">
+    <img id="left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpO7EzSjODk8n7EGlkAlSF-S336HLKGOFs86b7Srb5vsoN8S4be4R7kZOK">
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="zyv19bg0scg" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/ce/Citizenkane.jpg/220px-Citizenkane.jpg" width="220" height="342">
+    <h2>Citizen Kane</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="BkL9l7qovsE" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/CasablancaPoster-Gold.jpg/220px-CasablancaPoster-Gold.jpg" width="220" height="342">
+    <h2>Casablanca</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="sY1S34973zA" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg" width="220" height="342">
+    <h2>The Godfather</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="8mM8iNarcRc" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Poster_-_Gone_With_the_Wind_01.jpg/220px-Poster_-_Gone_With_the_Wind_01.jpg" width="220" height="342">
+    <h2>Gone With the Wind</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="zmr1iSG3RTA" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Lawrence_of_arabia_ver3_xxlg.jpg/220px-Lawrence_of_arabia_ver3_xxlg.jpg" width="220" height="342">
+    <h2>Lawrence of Arabia</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="H_3T4DGw10U" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/WIZARD_OF_OZ_ORIGINAL_POSTER_1939.jpg/212px-WIZARD_OF_OZ_ORIGINAL_POSTER_1939.jpg" width="220" height="342">
+    <h2>The Wizard of Oz</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="hsdvhJTqLak" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/8/8b/Graduateposter67.jpg" width="220" height="342">
+    <h2>The Graduate</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="QOLHbQjtSFs" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/93/On_the_Waterfront_original_poster.jpg/220px-On_the_Waterfront_original_poster.jpg" width="220" height="342">
+    <h2>On the Waterfront</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="JdRGC-w9syA" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/38/Schindler%27s_List_movie.jpg/220px-Schindler%27s_List_movie.jpg" width="220" height="342">
+    <h2>Schindler's List</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="36QiuRc_3I8" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Singing_in_the_rain_poster.jpg/220px-Singing_in_the_rain_poster.jpg" width="220" height="342">
+    <h2>Singin in the Rain</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="ewe4lg8zTYA" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Its_A_Wonderful_Life_Movie_Poster.jpg/220px-Its_A_Wonderful_Life_Movie_Poster.jpg" width="220" height="342">
+    <h2>It's a Wonderful Life</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Y3P0Zpe-2og" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/0a/SunsetBoulevardfilmposter.jpg" width="220" height="342">
+    <h2>Sunset Blvd</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="RlC7XBayj0s" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/The_Bridge_on_the_River_Kwai_poster.jpg" width="220" height="342">
+    <h2>The Bridge on the River Kwai</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="rI_lUHOCcbc" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Some_Like_It_Hot_poster.jpg/220px-Some_Like_It_Hot_poster.jpg" width="220" height="342">
+    <h2>Some Like it Hot</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="1g3_CFmnU7k" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/87/StarWarsMoviePoster1977.jpg/220px-StarWarsMoviePoster1977.jpg" width="220" height="342">
+    <h2>Star Wars</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="LSntQerk8cQ" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/22/AllAboutEve.jpeg/220px-AllAboutEve.jpeg" width="220" height="342">
+    <h2>All About Eve</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="88jytHOsDos" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/The-african-queen-1-.jpeg/250px-The-african-queen-1-.jpeg" width="220" height="342">
+    <h2>The African Queen</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="NG3-GlvKPcg" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Psycho_%281960%29.jpg/220px-Psycho_%281960%29.jpg" width="220" height="342">
+    <h2>Psycho</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="T37QkBc4IGY" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/38/Chinatownposter1.jpg/220px-Chinatownposter1.jpg" width="220" height="342">
+    <h2>Chinatown</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="2WSyJgydTsA" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/26/One_Flew_Over_the_Cuckoo%27s_Nest_poster.jpg/220px-One_Flew_Over_the_Cuckoo%27s_Nest_poster.jpg" width="220" height="342">
+    <h2>One Flew Over the Cuckoos Nest</h2>
+</div>
+
+    </div>
+  </body>
+</html>
