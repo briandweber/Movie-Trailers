@@ -1,9 +1,9 @@
-#Brian's Movie Project Website
+#Brian's Movie Project Website  
 
-##Author:
-Name: Brian D. Weber
-gitHub: briandweber
-email: briandweber@gmail.com
+##Author:  
+Name: Brian D. Weber  
+gitHub: briandweber  
+email: briandweber@gmail.com  
 http://www.briandweber.com (currently under construction)
 
 ##License:
